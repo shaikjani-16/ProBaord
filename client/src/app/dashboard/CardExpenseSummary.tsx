@@ -14,9 +14,7 @@ const colors = ["#00C49F", "#0088FE", "#FFBB28"];
 const CardExpenseSummary = () => {
   const { data: dashboardMetrics, isLoading } = useGetDashboardMetricsQuery();
 
-  
   const expenseSummary = dashboardMetrics?.expenseSummary[0];
-  
 
   const expenseByCategorySummary =
     dashboardMetrics?.expenseByCategory || [];
@@ -53,7 +51,7 @@ const CardExpenseSummary = () => {
         <>
           {/* HEADER */}
           <div>
-            <h2 className="text-lg font-semibold  px-7 pt-5">
+            <h2 className="text-lg font-semibold mb-2 px-7 pt-5">
               Expense Summary
             </h2>
             <hr />
@@ -109,7 +107,7 @@ const CardExpenseSummary = () => {
           <div>
             <hr />
             {expenseSummary && (
-              <div className=" flex justify-between items-center px-7 mb-4">
+              <div className="mt-3 flex justify-between items-center px-7 mb-4">
                 <div className="pt-2">
                   <p className="text-sm">
                     Average:{" "}
