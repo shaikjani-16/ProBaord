@@ -5,6 +5,7 @@ import {Archive, Clipboard, Layout, LucideIcon, Menu, SlidersHorizontal, User,In
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 import React from "react"
+import Image from "next/image"
 interface SidebarLinkProps{
   href:string;
   icon:LucideIcon;
@@ -35,7 +36,13 @@ const sidebarClassNames =`fixed flex flex-col ${isSidebarCollapsed?"w-0 md:w-16"
   return (
     <div className={sidebarClassNames}>
     <div className={`flex gap-3 justify-between md:justify-normal items-center pt-8 ${isSidebarCollapsed?"px-5":"px-8"}`}>
-        <div>Logo</div>
+    <Image
+              src="https://s3invdb.s3.ap-south-1.amazonaws.com/logo.jfif"
+              alt="logo"
+              width={50}
+              height={50}
+              className="rounded-full h-full object-cover"
+            />
         <h1 className={`${isSidebarCollapsed?"hidden":"block"} font-extrabold text-2xl`}>SKMJ</h1>
         <button className="md:hidden px-3 py-3 bg-gray-100 rounded-full hover:bg-blue-100"
         onClick={toogleSidebar}
